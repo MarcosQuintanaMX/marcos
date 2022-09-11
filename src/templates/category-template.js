@@ -3,20 +3,28 @@ import Layout from '../components/Layout'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 
-const Index = ({ data }) => {
+const CategoryTemplate = (props) => {
   const {
-    allMdx: { nodes: posts },
-  } = data
+    data: {
+      allMdx: { nodes: posts },
+    },
+  } = props
+  const {
+    pageContext: { category },
+  } = props
   return (
     <Layout>
-      <Posts posts={posts} title="reccently published" />
+      <Posts posts={posts} title={`category / ${category}`} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  {
-    allMdx(limit: 3, sort: { fields: frontmatter___date, order: DESC }) {
+  query GetCategories($category: String) {
+    allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { category: { eq: $category } } }
+    ) {
       nodes {
         id
         frontmatter {
@@ -25,7 +33,7 @@ export const query = graphql`
           category
 
           slug
-          date(formatString: "MMMM, Do YYYY")
+          date(formatString: "MMMM Do, YYYY")
           image {
             childImageSharp {
               gatsbyImageData
@@ -37,4 +45,5 @@ export const query = graphql`
     }
   }
 `
-export default Index
+
+export default CategoryTemplate

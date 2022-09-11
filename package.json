@@ -5,7 +5,7 @@
   "description": "marcos-ivan",
   "author": "emontes",
   "keywords": [
-    "gatsby"
+    "quintana"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -15,15 +15,32 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^2.1.3",
-    "@mdx-js/react": "^2.1.3",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.22.1",
-    "gatsby-plugin-mdx": "^4.1.1",
+    "gatsby-plugin-image": "^2.22.0",
+    "gatsby-plugin-mdx": "^3.20.0",
+    "gatsby-plugin-react-helmet": "^5.22.0",
+    "gatsby-plugin-react-i18next": "^2.0.4",
+    "gatsby-plugin-sharp": "^4.22.0",
     "gatsby-plugin-styled-components": "^5.22.0",
+    "gatsby-remark-images": "^6.22.0",
     "gatsby-source-filesystem": "^4.22.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "gatsby-transformer-sharp": "^4.22.0",
+    "i18next": "^21.9.1",
+    "prism-react-renderer": "^1.3.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.18.6",
+    "react-icons": "^4.4.0",
     "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "gatsby-plugin-postcss": "^5.22.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }
