@@ -43,11 +43,24 @@ const PostTemplate = ({ data }) => {
 }
 
 const Wrapper = styled.section`
-  width: 85vw;
-  max-width: 1100px;
-  margin: 0 auto;
-  margin-bottom: 4rem;
+  width: 95vw;
+  color: var(--clr-grey-5);
+  margin: 2rem auto;
+  @media (min-width: 1170px) {
+    display: flex;
+    gap: 2rem;
+  }
+  a {
+    color: var(--clr-primary-5);
+  }
 
+  .main-img {
+    display: block;
+    margin: 0 auto;
+    @media (min-width: 1170px) {
+      width: 75%;
+    }
+  }
   .post-info {
     margin: 2rem 0 4rem 0;
     text-align: center;
@@ -72,23 +85,6 @@ const Wrapper = styled.section`
       background: var(--clr-grey-9);
       margin: 0 auto;
       margin-bottom: 1rem;
-    }
-  }
-  @media (min-width: 992px) {
-    & {
-      width: 92vw;
-    }
-    .main-img {
-      width: 75%;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-  @media (min-width: 1170px) {
-    & {
-      display: grid;
-      grid-template-columns: 1fr 200px;
-      column-gap: 4rem;
     }
   }
 `

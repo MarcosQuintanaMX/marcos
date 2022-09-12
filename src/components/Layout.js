@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       <div className="flex justify-center items-center flex-col">
         <StaticImage
           className="border mb-2 mt-5"
-          src="../assets/images/asml-bg.jpg"
+          src="../assets/images/money-1.jpg"
           height={150}
           alt="asml"
         />
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
 
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
-      <main className="container mx-auto">{children}</main>
+      <main>{children}</main>
 
       <footer className="text-center py-8 bg-cyan-600 text-gray-100">
         <p>
