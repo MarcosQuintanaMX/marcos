@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="underline" />
           <p>
             <Trans>copyright</Trans> &copy; {new Date().getFullYear()}{' '}
-            <span className=" text-cyan-200">Marcos Iván Quintana</span>{' '}
+            <span className=" text-slate-300">Marcos Iván Quintana</span>{' '}
             <Trans>all rights reserved</Trans>
           </p>
         </div>
