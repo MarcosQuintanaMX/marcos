@@ -12,7 +12,7 @@ const Post = ({ excerpt, frontmatter }) => {
       <GatsbyImage image={getImage(image)} alt={title} className="img" />
       <div className="info">
         <span className="category">{category}</span>
-        <h3>{title}</h3>
+        <h3 className="text-slate-700 font-yrsa">{title}</h3>
         <div className="undeline"></div>
         <p>{excerpt}</p>
         <Link to={`/posts/${slug}`} className="link">

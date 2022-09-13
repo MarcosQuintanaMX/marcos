@@ -12,12 +12,14 @@ const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
           alt="Marcos"
           src="../assets/images/money-1.jpg"
         />
-        <div className="hero-container font-yrsa text-slate-100 text-center">
+        <div className="hero-container font-yrsa text-slate-300 text-center">
           <div className="header__text-box">
             <div className="text-4xl md:text-6xl">
               {main || 'Marcos Iván Quintana'}
             </div>
-            <div className="text-xl">{sub || 'Money is not enough'}</div>
+            <div className="text-xl md:text-4xl">
+              {sub || 'Money is not enough'}
+            </div>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@
 
 :root {
   --clr-primary-5: #2892d7;
+  --clr-primary-8: rgb(199, 226, 222);
   --clr-primary-10: #eefbff;
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-5: hsl(210, 22%, 49%);
@@ -62,6 +63,15 @@ a {
 a:hover {
     color: var(--clr-grey-9);
   }
+
+.underline {
+  width: 20%;
+  height: 0.2rem;
+  margin-bottom: 2rem;
+  background: var(--clr-primary-8);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .section-center {
   width: 90vw;
