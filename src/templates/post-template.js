@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Hero from '../components/Hero'
 import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Banner from '../components/Banner'
@@ -31,7 +30,7 @@ const PostTemplate = ({ data }) => {
             <p>{date}</p>
             <div className="underline"></div>
           </div>
-          <MDXRenderer>{body}</MDXRenderer>
+          <MDXRenderer embeddedImages={embeddedImages}>{body}</MDXRenderer>
         </article>
         {/* banner */}
         <article>
@@ -42,7 +41,7 @@ const PostTemplate = ({ data }) => {
   )
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.main`
   width: 95vw;
   color: var(--clr-grey-5);
   margin: 2rem auto;
@@ -100,11 +99,11 @@ export const query = graphql`
         slug
         title
 
-        # embeddedImages {
-        #   childImageSharp {
-        #     gatsbyImageData
-        #   }
-        # }
+        embeddedImages {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         image {
           childImageSharp {
             gatsbyImageData

@@ -2,15 +2,15 @@ import React from 'react'
 // import video from "../../assets/video/typing.mp4";
 import styled from 'styled-components'
 
-// export const RegVideo = () => {
-//   return (
-//     <RegVideoWrapper>
-//       <video controls autoPlay muted loop>
-//         <source src={video} type="video/mp4" />
-//       </video>
-//     </RegVideoWrapper>
-//   );
-// };
+export const RegVideo = ({ video }) => {
+  return (
+    <RegVideoWrapper>
+      <video controls autoPlay muted loop>
+        <source src={video} type="video/mp4" />
+      </video>
+    </RegVideoWrapper>
+  )
+}
 
 export const Video = ({ src, title, ...props }) => {
   return (

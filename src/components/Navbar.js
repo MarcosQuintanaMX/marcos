@@ -31,7 +31,7 @@ const Navbar = ({ toggleSidebar }) => {
       <div className="bg-cyan-600 text-gray-100 p-3">
         <button
           type="button"
-          className="md:hidden flex gap-2 w-full items-center justify-center border"
+          className="md:hidden flex gap-2 w-full items-center justify-center"
           onClick={toggleSidebar}
         >
           <FaBars /> Menú
