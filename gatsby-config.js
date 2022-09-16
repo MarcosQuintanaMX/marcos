@@ -1,3 +1,5 @@
+const { languages, defaultLanguage } = require('./languages.js')
+
 module.exports = {
   siteMetadata: {
     title: `Software Design Engineer`,
@@ -14,12 +16,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
     `gatsby-plugin-mdx`,
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -31,34 +27,30 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `locale`,
         path: `${__dirname}/locales`,
+        name: `locale`,
       },
     },
+
     {
-      resolve: `gatsby-plugin-react-i18next`,
+      resolve: 'gatsby-plugin-react-i18next',
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`en`, `es`],
-        defaultLanguage: `en`,
-        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://marcosquintana.com/`,
-        // you can pass any i18next options
+        languages,
+        defaultLanguage,
+        siteUrl: `https://marcosivan.com`,
         i18nextOptions: {
+          // debug: true,
+          fallbackLng: defaultLanguage,
+          supportedLngs: languages,
+          defaultNS: 'common',
           interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
           },
-          keySeparator: false,
-          nsSeparator: false,
-          pages: [
-            {
-              matchPath: '/posts/:title?',
-              languages: ['en'],
-            },
-          ],
         },
       },
     },
+
     `gatsby-plugin-react-helmet`,
   ],
 }

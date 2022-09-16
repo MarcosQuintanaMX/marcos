@@ -1,9 +1,11 @@
 import React from 'react'
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import { Trans, Link } from 'gatsby-plugin-react-i18next'
+import { Trans, useTranslation, Link } from 'gatsby-plugin-react-i18next'
+import Language from './Language'
 
 const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
+  const { t } = useTranslation()
   return (
     <Wrapper style={{ backgroundColor: `${bgColor || 'var(--clr-white)'}` }}>
       <div className="hero">
@@ -18,9 +20,12 @@ const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
               {main || 'Marcos Iván Quintana'}
             </div>
             <div className="text-xl md:text-4xl">
-              {sub || 'Money is not enough'}
+              {sub || t('El dinero no es suficiente')}
             </div>
           </div>
+        </div>
+        <div className="absolute top-4 right-2">
+          <Language />
         </div>
       </div>
     </Wrapper>
