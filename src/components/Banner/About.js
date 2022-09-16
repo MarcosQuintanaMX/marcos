@@ -3,11 +3,13 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import Title from './Title'
 import styled from 'styled-components'
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 
 const About = () => {
+  const { t } = useTranslation()
   return (
     <Wrapper>
-      <Title title="about me" />
+      <Title title={t('acerca de mi')} />
       <StaticImage
         src="../../assets/images/banner-about.jpg"
         alt="about"
@@ -16,7 +18,9 @@ const About = () => {
         height={100}
         className="img"
       />
-      <p>Controlar la complejidad es la esencia de la programación</p>
+      <p>
+        <Trans>AboutFrase1</Trans>
+      </p>
       {/* <SocialLinks styleClass="banner-icons" /> */}
     </Wrapper>
   )

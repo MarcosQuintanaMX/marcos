@@ -9,7 +9,6 @@ const Index = ({ data }) => {
     allMdx: { nodes: posts },
   } = data
   const { t } = useTranslation()
-  console.log({ t })
   return (
     <Layout>
       <Posts posts={posts} title={t('recientemente publicado')} />
