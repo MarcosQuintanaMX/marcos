@@ -1,15 +1,21 @@
 {
 	"AboutFrase1": "Controlling complexity is the essence of programming",
-	"Ajedrez": "Chess",
+	"Categoría": "Category",
 	"Conferencias": "Conferences",
 	"Consultorías": "Consulting",
 	"Contacto": "Contact",
+	"Continuar leyendo": "Continue reading",
 	"Cursos": "Courses",
 	"El dinero no es suficiente": "Money is not enough",
+	"Ir al inicio": "Go Home",
 	"Menú": "Menu",
 	"Principal": "Home",
+	"Página no encontrada": "Page not found",
 	"acerca de mi": "About me",
+	"ajedrez": "Chess",
 	"categorías": "categories",
+	"conferencias": "Conferences",
+	"memorias": "Memories",
 	"publicaciones recientes": "Recent Posts",
 	"recientemente publicado": "Recently published"
 }

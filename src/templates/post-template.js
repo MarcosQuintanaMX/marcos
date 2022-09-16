@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 const PostTemplate = ({ data }) => {
   const {
     mdx: {
@@ -12,8 +13,7 @@ const PostTemplate = ({ data }) => {
       body,
     },
   } = data
-  console.log({ data })
-  console.log({ body })
+  const { t } = useTranslation()
   return (
     <Layout>
       <Wrapper>
@@ -25,7 +25,7 @@ const PostTemplate = ({ data }) => {
             className="main-img"
           />
           <div className="post-info">
-            <span>{category}</span>
+            <span>{t(category)}</span>
             <h2>{title}</h2>
             <p>{date}</p>
             <div className="underline"></div>
@@ -91,7 +91,16 @@ const Wrapper = styled.main`
 export default PostTemplate
 
 export const query = graphql`
-  query GetSinglePost($slug: String) {
+  query GetSinglePost($slug: String, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         category

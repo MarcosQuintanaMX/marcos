@@ -4,19 +4,21 @@ import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Post = ({ excerpt, frontmatter }) => {
   const { title, image, slug, date, category } = frontmatter
+  const { t } = useTranslation()
   return (
     <Wrapper>
       <GatsbyImage image={getImage(image)} alt={title} className="img" />
       <div className="info">
-        <span className="category">{category}</span>
+        <span className="category">{t(category)}</span>
         <h3 className="text-slate-700 font-yrsa">{title}</h3>
         <div className="undeline"></div>
         <p>{excerpt}</p>
         <Link to={`/posts/${slug}`} className="link">
-          Continue reading <IoMdArrowRoundForward />
+          <Trans>Continuar leyendo</Trans> <IoMdArrowRoundForward />
         </Link>
         <footer>
           <span className="date">

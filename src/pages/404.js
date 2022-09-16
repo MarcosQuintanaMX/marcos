@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import { Trans, Link, useTranslation } from 'gatsby-plugin-react-i18next'
 const pageStyles = {
   color: '#232129',
   padding: '96px',
@@ -23,11 +24,14 @@ const codeStyles = {
   borderRadius: 4,
 }
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ data }) => {
+  const { t } = useTranslation()
   return (
     <Layout>
       <main style={pageStyles}>
-        <h1 style={headingStyles}>Page not found</h1>
+        <h1 style={headingStyles}>
+          <Trans>Página no encontrada</Trans>
+        </h1>
         <p style={paragraphStyles}>
           Sorry 😔, we couldn’t find what you were looking for.
           <br />
@@ -39,7 +43,10 @@ const NotFoundPage = () => {
             </>
           ) : null}
           <br />
-          <Link to="/">Go home</Link>.
+          <Link to="/">
+            <Trans>Ir al inicio</Trans>
+          </Link>
+          .
         </p>
       </main>
     </Layout>
@@ -49,3 +56,17 @@ const NotFoundPage = () => {
 export default NotFoundPage
 
 export const Head = () => <title>Not found</title>
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
