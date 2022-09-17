@@ -1,25 +1,25 @@
 const data = [
   {
     id: 1,
-    text: "about",
-    url: "/about",
+    text: 'acerca',
+    url: '/about',
   },
 
   {
     id: 3,
-    text: "contact",
-    url: "/contact",
+    text: 'contacto',
+    url: '/contact',
   },
   {
     id: 4,
-    text: "posts",
-    url: "/posts",
+    text: 'publicaciones',
+    url: '/posts',
   },
   {
     id: 5,
-    text: "Privacy policy",
-    url: "/privacy",
+    text: 'política de privacidad',
+    url: '/privacy',
   },
-];
+]
 
-export default data;
+export default data
