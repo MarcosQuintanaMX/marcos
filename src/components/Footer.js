@@ -41,9 +41,9 @@ const Footer = () => {
         <div className="">
           <div className="underline" />
           <p>
-            <Trans>copyright</Trans> &copy; {new Date().getFullYear()}{' '}
+            <Trans>derechos de autor</Trans> &copy; {new Date().getFullYear()}{' '}
             <span className=" text-slate-300">Marcos Iván Quintana</span>{' '}
-            <Trans>all rights reserved</Trans>
+            <Trans>derechos reservados</Trans>
           </p>
         </div>
       </div>
